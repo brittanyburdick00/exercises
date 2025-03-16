@@ -36,3 +36,6 @@ header h3 {
 header img {
     floats: left;
 }
+
+main {\clear: left;
+}
