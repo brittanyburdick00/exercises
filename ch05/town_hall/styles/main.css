@@ -42,7 +42,7 @@ h3 {
 /* the styles for the header */
 header {
 	border-bottom: 2px solid var(--accent-color);
-    padding: 1em;
+    padding: 0;
     background: linear-gradient(30deg, #f6bb73 0%, white 30%, white 65%, #f6bb73 100%);
 
 	& h2 {
@@ -87,7 +87,7 @@ blockquote {
 footer {
 	background-color: var(--accent-color);
     color: white;
-    padding: 1em;
+    padding: 0;
     text-align: center;
 	& p {
 		text-align: center;
