@@ -26,7 +26,7 @@ a:hover, a:focus{
 	color: var(--accent-color);
 }
 h1, h2, h3, p, ul {
-    padding: 0.25em;
+    padding: 0.25em 0;
 }
 h1 {
 	font-size: 150%;
@@ -87,6 +87,7 @@ main {
 aside {
     flex-basis: 25%;
     padding: 10px;
+	margin-right: 2em;
 }
 /* speaker img */
 img[src*="brancaccio75"],
@@ -109,10 +110,13 @@ section {
 article img {
 	min-width: 100px;
     max-width: 250px;
+	margin: 1em auto;
+    margin-bottom: 2em;
 }
 article.featured {
 	border-top: 2px solid var(--accent-color);
 	border-bottom: 2px solid var(--accent-color);
+	padding-bottom: 1em;
 }
 
 /* the styles for the footer */
