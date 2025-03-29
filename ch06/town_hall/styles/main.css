@@ -26,7 +26,6 @@ a:hover, a:focus{
 	color: var(--accent-color);
 }
 h1, h2, h3, p, ul {
-	/*margin: 0.25em 0;*/
     padding: 0.25em;
 }
 h1 {
@@ -90,9 +89,12 @@ aside {
     padding: 10px;
 }
 /* speaker img */
-aside img {
-	min-width: 100px;
-    max-width: 250px;
+img[src*="brancaccio75"],
+img[src*="sorkin75"],
+img[src*="chua75"],
+img[src*="sampson75"] {
+    min-width: 40px;
+    max-width: 75px;
 }
 section {
     flex-basis: 75%;
@@ -105,9 +107,10 @@ section {
 }
 /* guest img */
 article img {
-	min-width: 40px;
-    max-width: 75px;
-}
+	img[src*="sampson_dinosaur"] {
+		min-width: 100px;
+		max-width: 250px;
+	}
 .featured {
 	border-top: 2px solid var(--accent-color);
 	border-bottom: 2px solid var(--accent-color);
