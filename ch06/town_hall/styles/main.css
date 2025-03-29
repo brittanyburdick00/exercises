@@ -107,24 +107,26 @@ section {
 }
 /* guest img */
 article img {
-	img[src*="sampson_dinosaur"] {
-		min-width: 100px;
-		max-width: 250px;
-	}
-.featured {
+	min-width: 100px;
+    max-width: 250px;
+}
+article.featured {
 	border-top: 2px solid var(--accent-color);
 	border-bottom: 2px solid var(--accent-color);
 }
+
 /* the styles for the footer */
 footer {
 	background-color: var(--accent-color);
+    padding: 0;
+    text-align: center;
 	& p {
 		text-align: center;
 		color: white;
-		padding: 1em 0;
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 }
-
 /* CSS class */
 .large {
 	font-size: 125%;
