@@ -77,10 +77,10 @@ main {
 		font-style: italic;
 		padding-left: 1em;
 	}
-	& img {
+	/* & img {
 		border: 4px double var(--accent-color);
 		border-radius: 10px;
-	}
+	}*/
 }
 
 /* the styles for aside, section */
@@ -144,6 +144,7 @@ section.speaker {
 	}
 	& h2 {
 		color: black;
+		padding: 0;
 	}
 	& p {
 		padding: 0.5em 0;
