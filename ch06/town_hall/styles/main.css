@@ -87,6 +87,8 @@ main {
 aside {
     flex-basis: 25%;
     padding: 10px;
+	padding-left: 20px;
+	padding-bottom: 20px;
 	margin-right: 2em;
 }
 /* speaker img */
@@ -131,6 +133,22 @@ footer {
 		padding-bottom: 1em;
 	}
 }
+
+/* styles for the speaker class */
+section.speaker {
+	padding: 10px;
+	
+	& h1 {
+		color: var(--accent-color);
+	}
+	& h2 {
+		color: black;
+	}
+	& p {
+		padding: 0.5em 0;
+	}
+}
+
 /* CSS class */
 .large {
 	font-size: 125%;
