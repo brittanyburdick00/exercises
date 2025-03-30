@@ -77,10 +77,6 @@ main {
 		font-style: italic;
 		padding-left: 1em;
 	}
-	/* & img {
-		border: 4px double var(--accent-color);
-		border-radius: 10px;
-	}*/
 }
 
 /* the styles for aside, section */
@@ -91,14 +87,6 @@ aside {
 	padding-bottom: 20px;
 	margin-right: 2em;
 }
-/* speaker img */
-img[src*="brancaccio75"],
-img[src*="sorkin75"],
-img[src*="chua75"],
-img[src*="sampson75"] {
-    min-width: 40px;
-    max-width: 75px;
-}
 section {
     flex-basis: 75%;
     padding: 10px;
@@ -108,6 +96,15 @@ section {
 		margin: 0 0 10px 10px;
 	}
 }
+
+/* speaker img */
+img[src*="brancaccio75"],
+img[src*="sorkin75"],
+img[src*="chua75"],
+img[src*="sampson75"] {
+    min-width: 40px;
+    max-width: 75px;
+}
 /* guest img */
 article img {
 	min-width: 100px;
@@ -115,7 +112,10 @@ article img {
 	margin: 1em;
 	margin-right: 0;
     margin-bottom: 2em;
+	border: 1px solid black;
 }
+
+/* style for the featured class */
 article.featured {
 	border-top: 2px solid var(--accent-color);
 	border-bottom: 2px solid var(--accent-color);
