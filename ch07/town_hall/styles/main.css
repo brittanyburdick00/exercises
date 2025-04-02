@@ -70,9 +70,9 @@ header {
 ul.menu {
 	display: flex;
 	flex-wrap: wrap;
-
 	& li {
 		flex-basis: 20%;
+		text-align: center;
 	}
 }
 nav.navbar {
@@ -83,6 +83,10 @@ nav.navbar {
 		padding: 1em;
 		color: var(--light-menu-color);
 		text-decoration: none;
+		margin-top: 0;
+		margin-left: 1px;
+		margin-right: 1px;
+		margin-bottom: 2px;
 	}
 	& a:hover, a:focus, a.current {
 		background-color: var(--mid-menu-color);
