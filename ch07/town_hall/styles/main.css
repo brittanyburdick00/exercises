@@ -63,6 +63,16 @@ header {
 	}
 }
 
+/* the styles for the navigation bar */
+ul.menu {
+	display: flex;
+	flex-wrap: wrap;
+
+	& li {
+		flex-basis: 20%;
+	}
+}
+
 /* the styles for the main content */
 main {
 	display: flex;
