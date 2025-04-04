@@ -83,6 +83,13 @@ ul.menu {
 	& :hover > .submenu {
 		display: block;
 	}
+	& > li:first-child a {
+		margin-left: 0;
+	}
+	
+	& > li:last-child a {
+		margin-right: 0;
+	}
 }
 nav.navbar {
 	background-color: var(--accent-color);
@@ -115,6 +122,10 @@ ul.submenu {
 	background-color: var(--accent-color);
 	color: var(--light-menu-color);
 	display: none;
+
+	& > li a {
+		margin: 0 2px 2px;
+	}
 
 }
 
