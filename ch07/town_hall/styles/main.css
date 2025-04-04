@@ -74,6 +74,15 @@ ul.menu {
 		flex-basis: 20%;
 		text-align: center;
 	}
+	& li:has(.submenu) {
+		position: relative;
+	}
+	& > a small {
+		margin-left: 6px;
+	}
+	& :hover > .submenu {
+		display: block;
+	}
 }
 nav.navbar {
 	background-color: var(--accent-color);
@@ -99,6 +108,16 @@ nav.navbar {
 	}
 
 }
+ul.submenu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	background-color: var(--accent-color);
+	color: var(--light-menu-color);
+	display: none;
+
+}
+
 /* the styles for the main content */
 main {
 	display: flex;
