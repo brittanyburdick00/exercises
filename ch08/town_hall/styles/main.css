@@ -82,7 +82,7 @@ header {
 	  flex-basis: 25%;
 	}
 }
-@media (min-width: 900px) {
+@media (min-width: 765px) {
 	& .menu {
 		display: flex;
 		position: relative;
