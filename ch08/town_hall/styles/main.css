@@ -68,7 +68,7 @@ header {
 }
 
   /* Media query for 2-column layout */
-  @media (min-width: 900px) {
+@media (min-width: 900px) {
 	main {
 	  flex-direction: row;
 	}
@@ -81,8 +81,18 @@ header {
 	aside {
 	  flex-basis: 25%;
 	}
-  }
-  
+}
+@media (min-width: 900px) {
+	& .menu {
+		display: flex;
+		position: relative;
+		width: 100%;
+	}
+	& .menu-btn {
+		display: none;
+	}
+	& .submenu
+
 /* Mobile-first styles */
 /* the styles for the main content */
 main {
@@ -149,17 +159,40 @@ footer {
 
 /* styles for the menu */
 .menu {
-	display: flex;
-	flex-wrap: wrap;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 40%;
+	display: none;
 	& li { 
 		flex-basis: 20%; 
 		text-align: center;
 	}
 }
+/* Show menu when checkbox is checked */
+#menu-toggle:checked + .menu-btn + .menu {
+	display: flex;
+  }
 
+/* Hamburger style */
+.menu-btn {
+	display: block;
+	font-size: 24px;
+	cursor: pointer;
+  }
+
+/* Hide checkbox */
+#menu-toggle {
+	display: none;
+}
+/* Change hamburger to X when open */
+#menu-toggle:checked + .menu-btn::before {
+	content: 'X';
+  }
 .navbar {
 	clear: left;
 	background-color: var(--accent-color);
+	position: relative;
 	& a {
 		display: block;
 		padding: 1em;
@@ -182,7 +215,19 @@ footer {
 
 .submenu {
 	position: relative;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
 	& small { margin-left: .25em; }
+	& li::after{
+		content: '>';
+		float: right;
+	}
+	& li a {
+		margin: 2px;
+	}
+
 }
 
 .dropdown {
