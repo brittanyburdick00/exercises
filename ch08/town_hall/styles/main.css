@@ -67,9 +67,27 @@ header {
 	}
 }
 
+  /* Media query for 2-column layout */
+  @media (min-width: 900px) {
+	main {
+	  flex-direction: row;
+	}
+  
+	section {
+	  flex-basis: 75%;
+	  border-bottom: none;
+	}
+  
+	aside {
+	  flex-basis: 25%;
+	}
+  }
+  
+/* Mobile-first styles */
 /* the styles for the main content */
 main {
 	display: flex;
+	flex-direction: column-reverse;
 	padding: 0 1em 1em;
 	& blockquote {
 		font-style: italic;
@@ -84,7 +102,7 @@ main {
 
 /* the styles for the section */
 section {
-	flex-basis: 75%;
+	border-bottom: 1px solid --accent-color;
 	padding-left: .5em;
 	& img {
 		width: clamp(100px, 50%, 250px);
@@ -95,7 +113,6 @@ section {
 
 /* the styles for the aside */
 aside {
-	flex-basis: 25%;
 	padding-right: .5em;
 }
 
