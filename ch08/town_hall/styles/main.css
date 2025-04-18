@@ -201,7 +201,7 @@ footer {
 	width: 100%;
 	background-color: var(--accent-color);
 	color: var(--light_menu);
-	display: block;
+	display: none;
 
 	& > li a { margin: 2px; }
 
