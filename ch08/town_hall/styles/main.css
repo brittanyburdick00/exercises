@@ -181,20 +181,24 @@ footer {
 #checkbox-toggle:checked ~ .menu-btn::after {
     content: "\2716";                    
 }
-.menu li:has(.submenu) {
-	position: relative;
-	& small::after { 
-		content: "\25b6"; 
-	}  
-	& small { 
-		margin-left: .25em; 
-	}
-	&:hover > .submenu {
-		display: block;
-	}
+
+/* Submenu styles */
+.menu li.submenu > a small::after {
+    content: "\25b6"; /* right triangle */
+}
+.menu li.submenu > a small {
+    margin-left: .25em;
+}
+.menu li.submenu:hover > ul.dropdown,
+.menu li.submenu:focus-within > ul.dropdown {
+    display: block;
 }
 
-.submenu {
+.menu li.submenu {
+    position: relative;
+}
+
+.menu li.submenu > ul.dropdown {
 	position: absolute;
 	top: 0;
 	left: 100%;
@@ -239,7 +243,7 @@ footer {
 
 @media only screen and (min-width: 786px) {
 	.menu {
-		display: flex;
+		display: flex !important;
 		position: relative;
 		width: 100%;
 		& li { 
@@ -256,23 +260,18 @@ footer {
 
 	#checkbox-toggle:checked ~ .menu { display: flex; }
 
-	.menu li:has(.submenu) {
-		& small::after { content: "\25bc"; }  /* down triangle */
-	}
-	
-	.submenu {
-		top: auto;
-		left: 0;
-		right: 0;
-		& > li a { margin: 0 2px 2px; }
-	}
-
-	.navbar {
-		& a {
-			margin: 0 1px 2px;
-		}
-	}
-
+	.menu li.submenu > a small::after { content: "\25bc"; }  /* down triangle */
+    .menu li.submenu > ul.dropdown {
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        position: absolute;
+    }
+    .menu li.submenu > ul.dropdown > li a { margin: 0 2px 2px; }
+    .navbar a {
+        margin: 0 1px 2px;
+    }
 	.menu > li:first-child a { margin-left: 0; }
 	.menu > li:last-child a { margin-right: 0; }
 }
