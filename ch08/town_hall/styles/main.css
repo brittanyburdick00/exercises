@@ -206,6 +206,20 @@ footer {
 
 }
 
+.dropdown {
+	position: absolute;
+	left: 0;
+	right: 0;
+	background-color: var(--accent-color);
+	color: var(--light_menu);
+	display: none;
+	& > li a { margin: 0 2px 2px; }
+}
+
+.submenu:hover > .dropdown {
+	display: block;
+}
+
 /* media queries */
 @media only screen and (min-width: 922px) {
 	main {
