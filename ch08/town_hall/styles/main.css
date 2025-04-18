@@ -136,6 +136,7 @@ footer {
 /* styles for the menu */
 .menu {
 	position: absolute;
+	flex-direction: column;
 	left: 0;
 	top: 100%;
 	width: 40%;
@@ -221,6 +222,7 @@ footer {
 #menu-toggle:checked + .menu-btn::after {
 	content: '✖';
 }
+/* Show menu when toggled */
 #menu-toggle:checked ~ .menu {
 	display: flex;
 }
