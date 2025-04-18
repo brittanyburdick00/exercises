@@ -172,7 +172,8 @@ footer {
     content: "\2630";                    
 }
 /* checkbox is always hidden */
-#checkbox-toggle { display: none; }      
+#checkbox-toggle { display: none; }    
+
 /* when checkbox is checked, show menu and change icon */
 #checkbox-toggle:checked ~ .menu { 
     display: block; 
@@ -200,7 +201,7 @@ footer {
 	width: 100%;
 	background-color: var(--accent-color);
 	color: var(--light_menu);
-	display: none;
+	display: block;
 
 	& > li a { margin: 2px; }
 
