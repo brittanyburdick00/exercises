@@ -63,9 +63,6 @@ header {
 	}
 	& img {
 		display: none;
-		width: clamp(40px, 15%, 80px);
-		float: left;
-		margin: .75em 1em;
 	}
 }
 
@@ -136,16 +133,10 @@ footer {
 /* styles for the menu */
 .menu {
 	position: absolute;
-	flex-direction: column;
 	left: 0;
-	top: 100%;
 	width: 40%;
 	display: none;
 	background-color: var(--accent-color);
-	& li { 
-		flex-basis: 20%; 
-		text-align: center;
-	}
 }
 .navbar {
 	clear: left;
@@ -171,100 +162,118 @@ footer {
 	}
 }
 
+.menu-btn {                                
+    display: block;
+    padding: 1em;
+    color: var(--light_menu); 
+}
+/* hamburger symbol */
+.menu-btn::after { 
+    content: "\2630";                    
+}
+/* checkbox is always hidden */
+#checkbox-toggle { display: none; }      
+/* when checkbox is checked, show menu and change icon */
+#checkbox-toggle:checked ~ .menu { 
+    display: block; 
+}
+#checkbox-toggle:checked ~ .menu-btn::after {
+    content: "\2716";                    
+}
+.menu li:has(.submenu) {
+	position: relative;
+	& small::after { 
+		content: "\25b6"; 
+	}  
+	& small { 
+		margin-left: .25em; 
+	}
+	&:hover > .submenu {
+		display: block;
+	}
+}
+
 .submenu {
 	position: absolute;
 	top: 0;
 	left: 100%;
 	width: 100%;
-	& small { margin-left: .25em; }
-	& li::after{
-		content: '▶';
-		padding-left: 8px;
-	}
-	& li a {
-		margin: 2px;
-	}
-	& .submenu small{
-		display: none;
-	}
-
-}
-
-.dropdown {
-	position: absolute;
-	left: 0;
-	right: 0;
 	background-color: var(--accent-color);
 	color: var(--light_menu);
 	display: none;
-	& > li a { margin: 0 2px 2px; }
+
+	& > li a { margin: 2px; }
+
 }
 
-.submenu:hover > .dropdown {
-	display: block;
-}
-
-.menu > li:first-child a { margin-left: 0; }
-.menu > li:last-child a { margin-right: 0; }
-
-/* Hamburger style */
-.menu-btn {
-	display: block;
-	font-size: 24px;
-	cursor: pointer;
-	padding: 10px
-}
-/* Hide checkbox */
-#menu-toggle {
-	display: none;
-}
-/* Change hamburger to X when open */
-#menu-toggle:checked + .menu-btn::after {
-	content: '✖';
-}
-/* Show menu when toggled */
-#menu-toggle:checked ~ .menu {
-	display: flex;
-}
-
-/* Media query for 2-column layout */
-@media (min-width: 900px) {
+/* media queries */
+@media only screen and (min-width: 922px) {
 	main {
-	  flex-direction: row;
+		flex-direction: row;
 	}
+	
 	section {
-	  flex-basis: 75%;
-	  border-bottom: none;
+		flex-basis: 75%;
+		border-bottom: none;
 	}
+	
 	aside {
-	  flex-basis: 25%;
+		flex-basis: 25%;
 	}
 }
-@media (min-width: 765px) {
+
+@media only screen and (min-width: 786px) {
 	.menu {
 		display: flex;
 		position: relative;
 		width: 100%;
-		flex-direction: row;
+		& li { 
+			flex-basis: 20%; 
+			text-align: center;
+		}
 	}
-	.menu-btn {
-		display: none;
+
+	section {
+		border-bottom: none;
 	}
+	
+	.menu-btn { display: none; }
+
+	#checkbox-toggle:checked ~ .menu { display: flex; }
+
+	.menu li:has(.submenu) {
+		& small::after { content: "\25bc"; }  /* down triangle */
+	}
+	
 	.submenu {
 		top: auto;
 		left: 0;
 		right: 0;
+		& > li a { margin: 0 2px 2px; }
 	}
-	.submenu li::after {
-		content: '▼';
+
+	.navbar {
+		& a {
+			margin: 0 1px 2px;
+		}
 	}
-	.navbar a {
-		margin: 0;
-	}
-	.menu > li:first-child a {
-		border-top: none;
-	}
-	.menu > li:last-child a {
+
+	.menu > li:first-child a { margin-left: 0; }
+	.menu > li:last-child a { margin-right: 0; }
+}
+
+@media only screen and (min-width: 658px) {
+	section {
 		border-bottom: none;
+	}
+
+	header {
+		text-align: left;
+		& img {
+			display: block;
+			width: clamp(40px, 15%, 80px);
+			float: left;
+			margin: .75em 1em;
+		}
 	}
 }
