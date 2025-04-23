@@ -92,7 +92,7 @@ section {
 		margin: 0 1em .25em;
 	}
 	& ul {
-		list-style-type: square;
+		list-style-image: url(star.png);
 	}
 }
 
