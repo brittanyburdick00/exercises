@@ -91,6 +91,9 @@ section {
 		float: right;
 		margin: 0 1em .25em;
 	}
+	& ul {
+		list-style-type: square;
+	}
 }
 
 /* the styles for the aside */
