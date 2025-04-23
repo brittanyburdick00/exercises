@@ -93,11 +93,11 @@ section {
 	}
 	& ul {
 		list-style-image: url(../images/star.png);
-		padding-left: 1em;
+		margin-left: 1em;
 
 	}
 	& li {
-		padding:;
+		padding-left: 1em;;
 	}
 }
 
