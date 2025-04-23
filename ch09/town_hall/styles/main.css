@@ -92,7 +92,9 @@ section {
 		margin: 0 1em .25em;
 	}
 	& ul {
-		list-style-image: url(ch09/town_hall/images/star.png);
+		list-style-image: url(../images/star.png);
+		padding-left: 1em;
+
 	}
 	& li {
 		padding:;
