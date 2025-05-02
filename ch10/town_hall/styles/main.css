@@ -7,11 +7,7 @@
 	--mid_menu: antiquewhite;
 	--dark_menu: black;
 }
-@font-face {
-	font-family: "Academy Engraved";
-	src: url("academy-engraved.ttf") format("truetype");
-  }
-  
+
 /* reset */
 * {
 	margin: 0;
