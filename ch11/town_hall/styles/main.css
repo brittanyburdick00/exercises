@@ -140,7 +140,7 @@ section {
 					border-bottom: none;
 				}
 	
-				& tr:nth-last-child(3), tr:nth-last-child(6) {
+				& tr:nth-child(3), tr:nth-child(5) {
 					border-top: 2.5px solid var(--accent-color);
 				}
 	
