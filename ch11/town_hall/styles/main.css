@@ -16,7 +16,70 @@
 }
 
 /* the styles for the table */
+figure {
+	margin: 2em 0;
+	& figcaption {
+		font-weight: bold;
+		font-size: 1.25em;
+		margin-bottom: 0.5em;
+		color: var(--accent-color);
+	}
+	& table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 1em;
+		line-height: 1.4;
+		& thead {
+			background-color: white;
+			border-top: 2.5px solid var(--accent-color);
+			border-bottom: 2.5px solid var(--accent-color);
 
+			& th {
+				text-align: left;
+				padding: 0.75em 0.5em;
+				font-weight: bold;
+			}
+		}
+		& tbody {
+			& td {
+				padding: 0.75em 0.5em;
+				border-bottom: 2.5px solid var(--accent-color);
+			}
+			td:nth-child(4) {
+				text-align: right;
+			}
+			/* Remove inner-row borders for Fall */
+			& tr:nth-child(1) td {
+				border-bottom: none;
+			}
+
+			/* Remove inner-row borders for Winter */
+			& tr:nth-child(3) td,
+			& tr:nth-child(4) td {
+				border-bottom: none;
+			}
+
+			& tr:nth-child(3), tr:nth-child(6) {
+				border-top: 2.5px solid var(--accent-color);
+			}
+
+			& tr:nth-child(7) {
+				border-bottom: none;
+			}
+
+			/* Right-align and bold totals section */
+			& tr:nth-last-child(-n+3) td {
+				font-weight: bold;
+				text-align: right;
+			}
+		}
+
+		& th, & td {
+			border-left: none;
+			border-right: none;
+		}
+	}
+}
 
 
 /* default styles */
@@ -94,72 +157,6 @@ section {
 		width: clamp(100px, 50%, 250px);
 		float: right;
 		margin: 0 1em .25em;
-	}
-	& figure {
-		margin: 2em 0;
-	
-		& figcaption {
-			font-weight: bold;
-			font-size: 1.25em;
-			margin-bottom: 0.5em;
-			color: var(--accent-color);
-		}
-	
-		& table {
-			width: 100%;
-			border-collapse: collapse;
-			font-size: 1em;
-			line-height: 1.4;
-	
-			& thead {
-				background-color: white;
-				border-top: 2.5px solid var(--accent-color);
-				border-bottom: 2.5px solid var(--accent-color);
-	
-				& th {
-					text-align: left;
-					padding: 0.75em 0.5em;
-					font-weight: bold;
-				}
-			}
-	
-			& tbody {
-				& td {
-					padding: 0.75em 0.5em;
-					border-bottom: 2.5px solid var(--accent-color);
-				}
-	
-				/* Remove inner-row borders for Fall */
-				& tr:nth-child(1) td {
-					border-bottom: none;
-				}
-	
-				/* Remove inner-row borders for Winter */
-				& tr:nth-child(3) td,
-				& tr:nth-child(4) td {
-					border-bottom: none;
-				}
-	
-				& tr:nth-child(3), tr:nth-child(6) {
-					border-top: 2.5px solid var(--accent-color);
-				}
-	
-				& tr:nth-child(7) {
-					border-bottom: none;
-				}
-
-				/* Right-align and bold totals section */
-				& tr:nth-last-child(-n+3) td {
-					font-weight: bold;
-					text-align: right;
-				}
-			}
-	
-			& th, & td {
-				border-left: none;
-				border-right: none;
-			}
-		}
 	}
 	
 }
