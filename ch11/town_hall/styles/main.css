@@ -102,6 +102,7 @@ section {
 			font-weight: bold;
 			font-size: 1.25em;
 			margin-bottom: 0.5em;
+			color: var(--accent-color);
 		}
 
 		& table {
@@ -112,35 +113,37 @@ section {
 
 			& thead {
 				background-color: white;
+				border-top: 2.5px solid var(--accent-color);
+				border-bottom: 2.5px solid var(--accent-color);
 
 				& th {
 					text-align: left;
 					padding: 0.75em 0.5em;
 					font-weight: bold;
-					border-bottom: 2px solid var(--accent-color);
 				}
 			}
 
 			& tbody {
 				& td {
 					padding: 0.75em 0.5em;
-					border-bottom: 1px solid var(--accent-color);
+					border-bottom: 2.5px solid var(--accent-color);
 				}
 
-				/* Bold last 3 rows (totals and savings) */
+				/* Bold and right-align last 3 rows (pricing and savings) */
 				& tr:last-child td,
 				& tr:nth-last-child(2) td,
 				& tr:nth-last-child(3) td {
 					font-weight: bold;
+					text-align: right;
 				}
 
-				/* Bottom border for final row */
+				/* Bottom border for last row */
 				& tr:last-child td {
-					border-bottom: 2px solid var(--accent-color);
+					border-bottom: 2.5px solid var(--accent-color);
 				}
 			}
 
-			/* Remove side borders to match screenshot */
+			/* No left/right borders */
 			& th, & td {
 				border-left: none;
 				border-right: none;
