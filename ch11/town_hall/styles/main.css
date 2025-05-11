@@ -128,32 +128,29 @@ section {
 					padding: 0.75em 0.5em;
 					border-bottom: 2.5px solid var(--accent-color);
 				}
-
-				/* Remove border between Fall rows (1st and 2nd rows) */
+				/* ❌ Remove borders between Fall rows (Oct & Nov) */
 				& tr:nth-child(2) td {
 					border-bottom: none;
 				}
 
-				/* Remove border between Winter rows (4th and 5th, 5th and 6th) */
+				/* ❌ Remove borders between Winter rows (Jan, Feb, Mar) */
 				& tr:nth-child(4) td,
 				& tr:nth-child(5) td {
 					border-bottom: none;
 				}
 
-				/* Remove border between "6 tickets" and "season ticket" cost rows */
+				/* ❌ Remove border between "6 tickets" and "season" cost */
 				& tr:nth-last-child(3) td {
 					border-bottom: none;
 				}
 
-				/* Bold and right-align last 3 rows (pricing and savings) */
-				& tr:last-child td,
-				& tr:nth-last-child(2) td,
-				& tr:nth-last-child(3) td {
+				/* ✅ Bold & right-align last 3 rows */
+				& tr:nth-last-child(-n+3) td {
 					font-weight: bold;
 					text-align: right;
 				}
 
-				/* Bottom border for last row */
+				/* ✅ Keep border on very last row */
 				& tr:last-child td {
 					border-bottom: 2.5px solid var(--accent-color);
 				}
