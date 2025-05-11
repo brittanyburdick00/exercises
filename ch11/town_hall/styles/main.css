@@ -97,73 +97,80 @@ section {
 	}
 	& figure {
 		margin: 2em 0;
-
+	
 		& figcaption {
 			font-weight: bold;
 			font-size: 1.25em;
 			margin-bottom: 0.5em;
 			color: var(--accent-color);
 		}
-
+	
 		& table {
 			width: 100%;
 			border-collapse: collapse;
 			font-size: 1em;
 			line-height: 1.4;
-
+	
 			& thead {
 				background-color: white;
 				border-top: 2.5px solid var(--accent-color);
 				border-bottom: 2.5px solid var(--accent-color);
-
+	
 				& th {
 					text-align: left;
 					padding: 0.75em 0.5em;
 					font-weight: bold;
 				}
 			}
-
+	
 			& tbody {
 				& td {
 					padding: 0.75em 0.5em;
 					border-bottom: 2.5px solid var(--accent-color);
 				}
-				/* ❌ Remove borders between Fall rows (Oct & Nov) */
+	
+				/* Remove inner-row borders for Fall */
 				& tr:nth-child(2) td {
 					border-bottom: none;
 				}
-
-				/* ❌ Remove borders between Winter rows (Jan, Feb, Mar) */
+	
+				/* Remove inner-row borders for Winter */
 				& tr:nth-child(4) td,
 				& tr:nth-child(5) td {
 					border-bottom: none;
 				}
-
-				/* ❌ Remove border between "6 tickets" and "season" cost */
+	
+				/* Remove inner-row border between ticket and season total */
 				& tr:nth-last-child(3) td {
 					border-bottom: none;
 				}
-
-				/* ✅ Bold & right-align last 3 rows */
+	
+				/* Restore proper group-ending borders after:
+				   - Fall (Nov 16 row)
+				   - Winter (Mar 13 row)
+				   - Spring (Apr 18 row)
+				   - Savings (last row) */
+				& tr:nth-child(3) td,        /* After Fall */
+				& tr:nth-child(6) td,        /* After Winter */
+				& tr:nth-child(7) td,        /* After Spring */
+				& tr:last-child td {         /* After Savings */
+					border-bottom: 2.5px solid var(--accent-color);
+				}
+	
+				/* Right-align and bold totals section */
 				& tr:nth-last-child(-n+3) td {
 					font-weight: bold;
 					text-align: right;
 				}
-
-				/* ✅ Keep border on very last row */
-				& tr:last-child td {
-					border-bottom: 2.5px solid var(--accent-color);
-				}
 			}
-
-			/* No left/right borders */
+	
 			& th, & td {
 				border-left: none;
 				border-right: none;
 			}
 		}
 	}
-
+	
 }
 
 /* the styles for the aside */
