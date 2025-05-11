@@ -129,6 +129,22 @@ section {
 					border-bottom: 2.5px solid var(--accent-color);
 				}
 
+				/* Remove border between Fall rows (1st and 2nd rows) */
+				& tr:nth-child(2) td {
+					border-bottom: none;
+				}
+
+				/* Remove border between Winter rows (4th and 5th, 5th and 6th) */
+				& tr:nth-child(4) td,
+				& tr:nth-child(5) td {
+					border-bottom: none;
+				}
+
+				/* Remove border between "6 tickets" and "season ticket" cost rows */
+				& tr:nth-last-child(3) td {
+					border-bottom: none;
+				}
+
 				/* Bold and right-align last 3 rows (pricing and savings) */
 				& tr:last-child td,
 				& tr:nth-last-child(2) td,
