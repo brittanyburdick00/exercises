@@ -140,9 +140,8 @@ section {
 					border-bottom: none;
 				}
 	
-				/* Remove inner-row border between ticket and season total */
-				& tr:nth-last-child(3) td {
-					border-bottom: none;
+				& tr:nth-last-child(3), tr:nth-last-child(6) {
+					border-top: 2.5px solid var(--accent-color);
 				}
 	
 				& tr:nth-last-child(7) td {
