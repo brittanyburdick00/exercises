@@ -69,8 +69,10 @@ figure {
 
 			/* Right-align and bold totals section */
 			& tr:nth-last-child(-n+3) td {
-				font-weight: bold;
 				text-align: right;
+			}
+			& tr:nth-last-child td {
+				font-weight: bold;
 			}
 		}
 
