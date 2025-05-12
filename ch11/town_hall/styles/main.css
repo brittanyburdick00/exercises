@@ -45,7 +45,7 @@ figure {
 				padding: 0.75em 0.5em;
 				border-bottom: 2.5px solid var(--accent-color);
 			}
-			td:nth-child(4) {
+			td:last-child {
 				text-align: right;
 			}
 			/* Remove inner-row borders for Fall */
@@ -63,7 +63,7 @@ figure {
 				border-top: 2.5px solid var(--accent-color);
 			}
 
-			& tr:nth-child(7) {
+			& tr:nth-last-child(3) td {
 				border-bottom: none;
 			}
 
