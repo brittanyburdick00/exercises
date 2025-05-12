@@ -71,7 +71,7 @@ figure {
 			& tr:nth-last-child(-n+3) td {
 				text-align: right;
 			}
-			& tr:nth-last-child td {
+			& tr:last-child td:last-child {
 				font-weight: bold;
 			}
 		}
