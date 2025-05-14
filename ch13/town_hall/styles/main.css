@@ -94,7 +94,6 @@ section {
 	video {
 		width: 90%;
 		display: block;
-		margin: 1em auto;
 	}
 	
 }
@@ -205,7 +204,6 @@ footer {
 	color: var(--light_menu);
 	display: none;
 	z-index: 1;
-	position: relative;
 	& > li a { margin: 2px; }
 }
 
