@@ -91,6 +91,12 @@ section {
 		float: right;
 		margin: 0 1em .25em;
 	}
+	video {
+		width: 90%;
+		display: block;
+		margin: 1em auto;
+	}
+	
 }
 
 /* the styles for the aside */
@@ -198,6 +204,8 @@ footer {
 	background-color: var(--accent-color);
 	color: var(--light_menu);
 	display: none;
+	z-index: 1;
+	position: relative;
 	& > li a { margin: 2px; }
 }
 
