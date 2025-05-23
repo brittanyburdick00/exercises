@@ -23,6 +23,14 @@ body {
 	line-height: 1.5;
 	margin: auto;
 	border: 2px solid var(--accent-color);
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"header"
+		"nav"
+		"main"
+		"footer";
 }
 h1, h2, h3, p, ul {
 	padding: .25em 0;
@@ -47,6 +55,7 @@ ul {
 
 /* the styles for the header */
 header {
+	grid-area: header;
 	text-align: center;
 	line-height: 1.2;
 	border-bottom: 2px solid var(--accent-color);
@@ -68,8 +77,13 @@ header {
 
 /* the styles for the main content */
 main {
-	display: flex;
-	flex-direction: column-reverse;
+	grid-area: main;
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"section"
+		"aside";
 	padding: 0 1em 1em;
 	& blockquote {
 		font-style: italic;
@@ -84,6 +98,7 @@ main {
 
 /* the styles for the section */
 section {
+	grid-area: section;
 	padding-left: .5em;
 	border-bottom: 8px double var(--accent-color);
 	& img {
@@ -95,11 +110,13 @@ section {
 
 /* the styles for the aside */
 aside {
+	grid-area: aside;
 	padding-right: .5em;
 }
 
 /* the styles for the footer */
 footer {
+	grid-area: footer;
 	background-color: var(--accent-color);
 	& p {
 		text-align: center;
@@ -139,6 +156,7 @@ footer {
 }
 
 .navbar {
+	grid-area: nav;
 	clear: left;
 	position: relative;
 	background-color: var(--accent-color);
@@ -203,34 +221,36 @@ footer {
 
 @media only screen and (min-width: 922px) {
 	main {
-		flex-direction: row;
+		grid-template-rows: auto;
+		grid-template-columns: 25% 1fr;
+		grid-template-areas: "aside section";
 	}
 	
 	section {
-		flex-basis: 75%;
 		border-bottom: none;
 	}
 	
 	aside {
-		flex-basis: 25%;
+		
 	}
 }
 
 @media only screen and (min-width: 786px) {
 
 	.menu {
-		display: flex;
+		display: grid;
 		position: relative;
 		width: 100%;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: auto;
 		& li { 
-			flex-basis: 20%; 
 			text-align: center;
 		}
 	}
 		
 	.menu-btn { display: none; }
 
-	#checkbox-toggle:checked ~ .menu { display: flex; }
+	#checkbox-toggle:checked ~ .menu { display: grid; }
 
 	.menu li:has(.submenu) {
 		& small::after { content: "\25bc"; }  /* down triangle */
