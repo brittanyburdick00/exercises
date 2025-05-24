@@ -24,13 +24,13 @@ body {
 	margin: auto;
 	border: 2px solid var(--accent-color);
 	display: grid;
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto auto auto;
 	grid-template-areas:
-		"header"
-		"nav"
-		"main"
-		"footer";
+    "header header header header header header header header header header header header"
+    "aside-left aside-left aside-left section section section section section section aside-right aside-right aside-right"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+	gap: 1em;
 }
 h1, h2, h3, p, ul {
 	padding: .25em 0;
