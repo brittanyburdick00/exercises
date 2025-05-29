@@ -92,10 +92,27 @@ section {
 		margin: 0 1em .25em;
 	}
 }
-
+/* ANIMATION for image in <section> with .speaker class */
+.speaker section img {
+	animation: pulseEffect 2s ease-in-out infinite alternate;
+}
+@keyframes pulseEffect {
+	to {
+	  filter: drop-shadow(0 0 10px black) brightness(125%);
+	  transform: scale(1.1);
+	}
+}
 /* the styles for the aside */
 aside {
 	padding-right: .5em;
+	& img {
+		transition: transform 2s;
+	}
+	& img:hover {
+		  /* transform: translateX(30px); */
+		  transform: rotate(180deg);
+		  transform-origin: right center;
+	}
 }
 
 /* the styles for the footer */
@@ -203,6 +220,25 @@ footer {
 
 
 /* media queries */
+
+/* REDUCED MOTION settings */
+@media (prefers-reduced-motion: reduce) {
+	.speaker section img {
+	  animation: none;
+	}
+  
+	aside img {
+	  transition: none;
+	  transform: none;
+	}
+  }
+  
+  /* REPLACE .current with :not() for navbar current link styling */
+  .navbar a:not([href]) {
+	background-color: var(--mid_menu);
+	color: var(--dark_menu);
+}
+
 @media only screen and (min-width: 922px) {
 	main {
 		flex-direction: row;
