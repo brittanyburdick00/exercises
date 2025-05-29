@@ -92,8 +92,8 @@ section {
 		margin: 0 1em .25em;
 	}
 }
-/* ANIMATION for image in <section> with .speaker class */
-.speaker section img {
+/* ANIMATION for image in .speaker class */
+.speaker img {
 	animation: pulseEffect 2s ease-in-out infinite alternate;
 }
 @keyframes pulseEffect {
