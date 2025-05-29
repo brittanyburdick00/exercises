@@ -95,7 +95,6 @@ section {
 /* ANIMATION for image in .speaker class */
 .speaker img {
 	animation: pulseEffect 2s ease-in-out infinite alternate;
-	outline: 3px solid red;
 }
 @keyframes pulseEffect {
 	to {
